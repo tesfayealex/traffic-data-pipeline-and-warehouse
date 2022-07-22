@@ -1,0 +1,1 @@
+COPY Warehouse.raw_data FROM '/home/hp/Downloads/t_data.csv' WITH DELIMITER AS ';' NULL AS '\null' CSV HEADER;
