@@ -12,6 +12,22 @@ default_args={
     'retry_delay':timedelta(minutes=2)
 }
 
+def modify_raw_data():
+    updated_lines=""
+    with open('/home/hp/Downloads/dataset.csv', 'r', encoding='ISO-8859-1') as f:
+            lines = f.readlines()
+            for index , line in enumerate(lines):
+                if(index == 0):
+                    data = line 
+                each_line = line.split(';')
+                if index != 0:
+                    updated_lines += ";".join(each_line[0:10]) + ";" + "_".join(each_line[10:])
+                else:
+                    updated_lines += ";".join(each_line[:len(each_line)-1]) + ";" + "time" + ";" + "other_data" + "\n" 
+    with open('/home/hp/Downloads/transformed_data.csv', "w") as f:
+        f.writelines(updated_lines)
+
+
 with DAG(
     dag_id='load_data',
     default_args=default_args,
