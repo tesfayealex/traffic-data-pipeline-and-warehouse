@@ -9,16 +9,14 @@
 
 {{ config(materialized='view') }}
 
--- with source_data as (
+with traffic_dbt_model as (
 
---     select 1 as id
---     union all
---     select null as id
+    select id,track_id," type" from datasets
 
--- )
+)
 
 select *
-from source_data
+from traffic_dbt_model
 
 /*
     Uncomment the line below to remove records with null `id` values
