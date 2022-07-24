@@ -19,8 +19,10 @@ models:
         tests:
           - unique
           - not_null
-  - name: traffic_dbt_model
+  - name: datasets
     description: "traffic data"
+    # database: "Warehouse"
+    # schema: "datasets"
     columns:
       - name: id
         description: "unique id"
@@ -28,3 +30,19 @@ models:
         description: "track id"
       - name: type
         description: "type"
+      - name: traveled_d
+        description: "traveled_d"
+      - name: avg_speed
+        description: "avg_speed"
+      - name: lat
+        description: "lat"
+      - name: lon
+        description: "lon"
+      - name: speed
+        description: "speed"
+      - name: lon_acc
+        description: "lon_acc"
+      - name: lat_acc
+        description: "lat_acc"
+      - name: time
+        description: "time"

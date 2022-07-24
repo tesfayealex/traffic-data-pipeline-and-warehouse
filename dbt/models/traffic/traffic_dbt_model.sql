@@ -1,6 +1,5 @@
 
-  create view "trial"."trial"."traffic_dbt_model__dbt_tmp" as (
-    
+{{ config(materialized='view') }}
 
 with traffic_dbt_model as (
 
@@ -16,4 +15,3 @@ from traffic_dbt_model
 */
 
 -- where id is not null
-  );
