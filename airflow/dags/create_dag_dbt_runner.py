@@ -22,7 +22,7 @@ with DAG(
     schedule_interval='@once'
 )as dag:
     task1 = BashOperator(
-        task_id='dbt_debug',
+        task_id='dbt_move_to_folder',
         bash_command='cd ../dbt' 
     )
     task2 = BashOperator(

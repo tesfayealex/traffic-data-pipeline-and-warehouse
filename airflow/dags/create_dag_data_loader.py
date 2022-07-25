@@ -41,19 +41,14 @@ with DAG(
         op_kwargs={'location':"/data/dataset.csv"}
     )
     task2 = PostgresOperator(
-        task_id='create_warehouse_database',
-        postgres_conn_id='postgres_connection',
-        sql='/sql/create_raw_data.sql',
-    )
-    task3 = PostgresOperator(
         task_id='create_dataset_table',
         postgres_conn_id='postgres_connection',
         sql='/sql/create_raw_data.sql',
     )
-    task4 = PostgresOperator(
+    task3 = PostgresOperator(
         task_id='load_dataset',
         postgres_conn_id='postgres_connection',
         sql='/sql/load_raw_data.sql',
     )
 
-    task1 >> task2 >> task3 >> task4
+    task1 >> task2 >> task3

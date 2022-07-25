@@ -4,23 +4,23 @@
 
 **Table of content**
 
- [traffic-data-pipeline-and-warehouse](#traffic-data-pipeline-and-warehouse)
-  - [Introduction](#Introduction)
-  - [Included Technologies and tools](#Included-Technologies-and-tools)
-  - [Dev setup](#Dev-setup)
-  - [Root folder](#Root-folder)
-  - [Project Structure](#project-structure)
-    - [airflow](#client)
-    - [dbt](#exercises)
-    - [images](#mobile_app)
+[traffic-data-pipeline-and-warehouse](#traffic-data-pipeline-and-warehouse)
+
+- [Introduction](#Introduction)
+- [Included Technologies and tools](#Included-Technologies-and-tools)
+- [Dev setup](#Dev-setup)
+- [Root folder](#Root-folder)
+- [Project Structure](#project-structure)
+  - [airflow](#client)
+  - [data](#data)
+  - [dbt](#exercises)
+  - [images](#mobile_app)
 
 ## Introduction
 
 <p>
 A city traffic department wants to collect traffic data using swarm UAVs (drones) from a number of locations in the city and use the data collected for improving traffic flow in the city and for a number of other undisclosed projects. Your startup is responsible for creating a scalable data warehouse that will host the vehicle trajectory data extracted by analysing footage taken by swarm drones and static roadside cameras.The data warehouse should take into account future needs, organise data such that a number of downstream projects query the data efficiently. You should use the Extract Load Transform (ELT) framework using DBT.
 </p>
-
-
 
 ## Included-Technologies-and-tools
 
@@ -40,7 +40,22 @@ Redash - is an open-source web application. It's used for clearing databases and
 
 ## Dev-setup
 
-    
+  Clone this repo
+
+      https://github.com/tesfayealex/traffic-data-pipeline-and-warehouse
+
+  Install python requirements
+
+      cd  traffic-data-pipeline-and-warehouse
+      pip install -r requirements
+
+  Install Docker , Docker compose and Redash
+
+      ./setup.sh
+
+  Initialize airflow with docker-compose
+
+      docker-compose up
 
 ## Root-folder:
 
@@ -48,11 +63,21 @@ Redash - is an open-source web application. It's used for clearing databases and
 - `Dockerfile`: build users can create an automated build that executes several command-line instructions in a container.
 
 ## Project Structure
-The Project uses a truffle unbox structure and follows 
 
-### airflow 
-This folder holds airflow dags 
+The Project uses a truffle unbox structure and follows
+
+### airflow
+
+This folder holds airflow dags
+
 ### dbt
+
 This folder holds queries in dbt
-### images  
+
+### data
+
+This folder holds data used on the project 
+
+### images
+
 This folder holds important images
