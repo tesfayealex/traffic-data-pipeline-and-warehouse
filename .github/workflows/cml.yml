@@ -16,8 +16,8 @@ jobs:
           echo "###  Airflow Image" >> report.md
           cml publish ./images/dag_graph.png --md >> report.md
           echo "###  Dbt Image" >> report.md
-          cml publish ./image/dbt_linage.png --md >> report.md
+          cml publish ./images/dbt_linage.png --md >> report.md
           echo "###  Redash Image" >> report.md
-          cml publish ./image/redash_1.png --md >> report.md
+          cml publish ./images/redash_1.png --md >> report.md
           # cat report.md
           cml send-comment report.md
