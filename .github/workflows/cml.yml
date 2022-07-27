@@ -1,0 +1,23 @@
+name: model-metrics
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: iterative/setup-cml@v1
+      - name: Metrics
+
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |     
+          echo "## Dashboards" >> report.md
+          echo "###  Airflow Image" >> report.md
+          cml publish ./images/dag graph.png --md >> report.md
+          echo "###  Dbt Image" >> report.md
+          cml publish ./image/dbt_linage.png --md >> report.md
+          echo "###  Redash Image" >> report.md
+          cml publish ./image/redash_1.png --md >> report.md
+          # cat report.md
+          cml send-comment report.md
