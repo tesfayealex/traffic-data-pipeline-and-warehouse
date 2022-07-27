@@ -11,10 +11,11 @@
 - [Dev setup](#Dev-setup)
 - [Root folder](#Root-folder)
 - [Project Structure](#project-structure)
-  - [airflow](#client)
+  - [airflow](#airflow)
   - [data](#data)
-  - [dbt](#exercises)
-  - [images](#mobile_app)
+  - [dbt](#dbt)
+  - [images](#images)
+  - [notebooks](#notebooks)
 
 ## Introduction
 
@@ -61,6 +62,9 @@ Redash - is an open-source web application. It's used for clearing databases and
 
 - `README.md`: Markdown text with a brief explanation of the project and the repository structure.
 - `Dockerfile`: build users can create an automated build that executes several command-line instructions in a container.
+- `setup.sh`: Docker installer for redash including docker and docker-compose installer
+- `docker-compose`: Docker compose for airflow
+- `requirements`: Python requirements to run the project 
 
 ## Project Structure
 
@@ -68,11 +72,11 @@ The Project uses a truffle unbox structure and follows
 
 ### airflow
 
-This folder holds airflow dags
+This folder holds airflow dags and sql queries
 
 ### dbt
 
-This folder holds queries in dbt
+This folder holds queries in dbt and sql queries
 
 ### data
 
@@ -81,3 +85,7 @@ This folder holds data used on the project
 ### images
 
 This folder holds important images
+
+### notebooks
+
+This folder holds EDA notebook for visualization of the data
